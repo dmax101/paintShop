@@ -1,1 +1,32 @@
-<p>register works!</p>
+<h1 class="text-3xl text-center w-full mb-8">New User</h1>
+
+<form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+  <div class="form-control">
+    <label class="label">
+      <span class="label-text">Email</span>
+    </label>
+    <input
+      type="email"
+      placeholder="email"
+      class="input input-bordered"
+      formControlName="email"
+    />
+  </div>
+  <div class="form-control">
+    <label class="label">
+      <span class="label-text">Password</span>
+    </label>
+    <input
+      type="password"
+      placeholder="password"
+      class="input input-bordered"
+      formControlName="password"
+    />
+    <label class="label">
+      <a routerLink="/auth/login" class="label-text-alt link link-hover">Already have an account? Sign in here!</a>
+    </label>
+  </div>
+  <div class="form-control mt-6">
+    <button type="submit" class="btn btn-secondary">Create User</button>
+  </div>
+</form>
