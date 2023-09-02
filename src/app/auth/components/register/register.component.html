@@ -6,11 +6,18 @@
       <span class="label-text">Email</span>
     </label>
     <input
-      type="email"
+      type="text"
       placeholder="email"
-      class="input input-bordered"
+      class="input input-bordered error:input-error"
       formControlName="email"
+      (change)="onChange()"
     />
+    <div
+      *ngIf="formGroup.controls.email.errors"
+      class="w-full text-sm text-right text-red-300"
+    >
+      Incorrect email!
+    </div>
   </div>
   <div class="form-control">
     <label class="label">
@@ -21,12 +28,42 @@
       placeholder="password"
       class="input input-bordered"
       formControlName="password"
+      (change)="onChange()"
     />
     <label class="label">
-      <a routerLink="/auth/login" class="label-text-alt link link-hover">Already have an account? Sign in here!</a>
+      <a routerLink="/auth/register" class="label-text-alt link link-hover"
+        >Already have an account? Sign up here!</a
+      >
     </label>
   </div>
   <div class="form-control mt-6">
-    <button type="submit" class="btn btn-secondary">Create User</button>
+    <button
+      type="submit"
+      class="btn btn-secondary"
+      [ngClass]="formGroup.valid ? '' : 'btn-disabled'"
+    >
+      Create User
+    </button>
   </div>
 </form>
+
+<div
+  class="mt-8 alert"
+  ngClass="{{'alert-' + (message$ | async)?.type }}"
+  *ngIf="!(message$ | async)?.hidden"
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    class="stroke-current shrink-0 h-6 w-6"
+    fill="none"
+    viewBox="0 0 24 24"
+  >
+    <path
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
+    />
+  </svg>
+  <span>{{ (message$ | async)?.message }}</span>
+</div>
