@@ -1,5 +1,28 @@
-@import url("https://fonts.googleapis.com/css2?family=Bigelow+Rules&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bigelow+Rules&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.scrollbar {
+  height: 300px;
+  width: 50%;
+  overflow: auto;
+  padding: 0 10px;
+}
+/*       ScrollBar 1        */
+
+div::-webkit-scrollbar {
+  width: 10px;
+}
+
+div::-webkit-scrollbar-track {
+  border-radius: 8px;
+  background-color: #e7e7e7;
+  border: 1px solid #cacaca;
+}
+
+div::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background-color: #155edb;
+}

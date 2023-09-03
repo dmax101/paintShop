@@ -6,7 +6,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        "Bigelow-Rules": ["Bigelow Rules", "cursive"]
+        "Bigelow-Rules": ["Bigelow Rules", "cursive"],
+        "Merriweather": ["Merriweather", "serif"]
       }
     },
   },

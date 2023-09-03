@@ -8,10 +8,11 @@ import { MessageService } from './shared/services/message.service';
 import { AuthServiceService } from './auth/services/auth-service.service';
 import { HandleErrors } from './shared/handlers/errors-handlers';
 import { SharedModule } from './shared/shared.module';
+import { HomeModule } from './home/home.module';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, AppRoutingModule, AuthRoutes, AuthModule, SharedModule],
+  imports: [BrowserModule, AppRoutingModule, AuthRoutes, AuthModule, SharedModule, HomeModule],
   providers: [AuthServiceService, MessageService, HandleErrors],
   bootstrap: [AppComponent],
 })

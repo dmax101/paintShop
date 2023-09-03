@@ -1,1 +1,16 @@
-<p>product-card works!</p>
+<div class="card w-full glass">
+  <figure>
+    <img
+      src="https://placehold.co/600x400/{{ paint.color | slice:1:7 }}/FFFFFF/png?text={{ paint.name }}&font=lora?"
+      alt="{{ paint.name }}"
+    />
+  </figure>
+  <div class="card-body">
+    <h2 class="card-title">{{ paint.name }}</h2>
+    <h3>Year: {{ paint.year }}</h3>
+    <h3>HEX: {{ paint.color }}</h3>
+    <h3>Pantone: {{ paint.pantone_value }}</h3>
+
+    <div class="card-actions justify-end"></div>
+  </div>
+</div>

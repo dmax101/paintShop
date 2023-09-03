@@ -1,21 +1,42 @@
-<!-- <p>home works!</p>
-<button (click)="onSignOut()" type="button" class="btn btn-warning">Sign out!</button> -->
-
 <div
   class="w-full h-screen p-10 flex bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-gray-700 via-gray-900 to-black"
 >
   <div
-    class="flex flex-row gap-8 flex-1 rounded-3xl shadow-lg bg-gradient-to-r from-rose-100 to-teal-100 overflow-hidden"
+    class="flex flex-row flex-1 rounded-3xl shadow-lg bg-gradient-to-r from-rose-100 to-teal-100 overflow-hidden"
   >
     <div
-      class="w-80 p-8 drop-shadow-xl bg-gradient-to-r from-cyan-500 to-blue-500"
+      class="w-80 p-8 drop-shadow-xl bg-gradient-to-r from-cyan-500 to-blue-500 flex flex-col justify-between"
     >
       <h1 class="w-full text-center mb-8 text-8xl font-bold font-Bigelow-Rules">
         <span class="text-white">paint</span>
         <span class="text-white">shop</span>
       </h1>
+      <div class="flex flex-col gap-4">
+        <button (click)="onSignOut()" type="button" class="btn btn-primary">
+          Sign out!
+        </button>
+        <span class="w-full text-center text-gray-800"
+          >&copy; Danilo Ribeiro</span
+        >
+      </div>
     </div>
-    <div class="p-8">
+    <div
+      class="p-8 w-full flex flex-col gap-8 bg-[url('https://images.unsplash.com/photo-1543857778-c4a1a3e0b2eb?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb')] bg-bottom bg-cover"
+    >
+      <div
+        class="font-Merriweather w-full text-center backdrop-blur-sm bg-white/30 p-8 rounded-lg"
+      >
+        <h1 class="text-3xl font-extrabold text-cyan-700 drop-shadow-lg">
+          Products Avaliable
+        </h1>
+      </div>
+      <div
+        class="flex-1 w-full h-full grid grid-cols-3 overflow-x-hidden overflow-y-auto gap-4 pr-4 pb-4"
+      >
+        <div *ngFor="let paint of paintList">
+          <app-product-card [paint]="paint"></app-product-card>
+        </div>
+      </div>
     </div>
   </div>
 </div>

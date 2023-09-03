@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { IPaint } from 'src/app/home/home.component';
 
 @Component({
   selector: 'app-product-card',
@@ -6,5 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./product-card.component.scss']
 })
 export class ProductCardComponent {
+  @Input() paint: IPaint = {
+    id: 0,
+    name: "Teste",
+    year: 200,
+    color: "#000000",
+    pantone_value: "Pantone"
+  }
 
 }
