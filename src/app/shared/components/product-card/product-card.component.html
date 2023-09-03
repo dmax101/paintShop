@@ -1,15 +1,15 @@
-<div class="card w-full glass">
-  <figure>
+<div class="hover:scale-95 transition-all card w-full glass animate__animated animate__pulse hover:">
+  <figure class="hover:animate-pulse">
     <img
       src="https://placehold.co/600x400/{{ paint.color | slice:1:7 }}/FFFFFF/png?text={{ paint.name }}&font=lora?"
       alt="{{ paint.name }}"
     />
   </figure>
   <div class="card-body">
-    <h2 class="card-title">{{ paint.name }}</h2>
-    <h3>Year: {{ paint.year }}</h3>
-    <h3>HEX: {{ paint.color }}</h3>
-    <h3>Pantone: {{ paint.pantone_value }}</h3>
+    <h2 class="card-title hover:animate-pulse">{{ paint.name }}</h2>
+    <h3 class="hover:animate-pulse">Year: {{ paint.year }}</h3>
+    <h3 class="hover:animate-pulse">HEX: {{ paint.color }}</h3>
+    <h3 class="hover:animate-pulse">Pantone: {{ paint.pantone_value }}</h3>
 
     <div class="card-actions justify-end"></div>
   </div>
